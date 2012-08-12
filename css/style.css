@@ -64,7 +64,14 @@ td { vertical-align: top; }
 
 .chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
 
+/* ************
+ Main Styles */
 
+/* Global & Main Containers */
+header, #main , footer { display: block; }
+hgroup, section { max-width: 1200px; margin:0 auto; }
+
+/* Navigation */
 
 
 
