@@ -16,8 +16,23 @@
 </head>
 <body>
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-  <header>
-
+  <nav class="shadow">
+    <hgroup>
+      <img id="mainLogo" src="img/kartma_logo_horiz.png" title="Kartma Live Art Prints" alt="Kartma Logo">
+    </hgroup>
+  </nav>
+  
+  <header class="clearfix">
+    <article class="shadow">
+      <h1>
+        <span class="blue">Live </span> 
+        <span class="sienna">Art</span>
+        <span class="grey">. </span>
+        <span class="blue">Give </span>
+        <span class="sienna">Art</span>
+        <span class="grey">.</span>
+      </h1>
+    </article>
   </header>
   <div role="main">
 
@@ -26,18 +41,32 @@
 
   </footer>
 
-  <nav>
-    <hgroup>
-      <h1><img src="img/kartma_logo_horiz.png" title="Kartma Live Art Prints" alt="Kartma Logo"></h1>
-    </hgroup>
-  </nav>
-
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/supersized.js"></script>
+
+  <script>
+    jQuery(function($){
+      
+      $.supersized({
+        slides  :   [ {image : 'img/banner.jpg'} ]
+      });
+
+    });
+
+    $(window).load(function() {
+  
+      $("header, #supersized").animate({
+      opacity: 1
+      }, 600);
+      $('nav, #container').delay(1200).slideDown(2000);
+    
+  });
+  </script>
 
   <script>
     var _gaq=[['_setAccount','UA-31805864-2'],['_trackPageview']];

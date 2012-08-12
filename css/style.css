@@ -65,16 +65,51 @@ td { vertical-align: top; }
 .chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
 
 /* ************
- Main Styles */
+ Page Styles 
+ *************/
+
+/* Global Styles */
+body {background:#111;}
+
+/* Animation Styles */
+#supersized, header { opacity:0; }
+
+/* Global CSS3 Effects */
+.shadow {
+-moz-box-shadow: 0 0 5px #111;
+-webkit-box-shadow: 0 0 5px #111;
+box-shadow: 0 0 5px #111;
+}
 
 /* Global & Main Containers */
-header, #main , footer { display: block; }
+header, #main , footer { display: block; width:90%; margin:0 auto; }
 hgroup, section { max-width: 1200px; margin:0 auto; }
 
 /* Navigation */
+nav { background:url(../img/canvasTexture.jpg); position: fixed; top:0; width:100%; padding: 0.5em 0; z-index:1;}
+hgroup { text-align:center; }
+#mainLogo { width:20%; }
 
+/* Header */
+#banner {display: block; width:100%; max-width:1920px; margin:0 auto;}
+header {position: relative;}
+header article {margin-top:30%; float:right; background:#fff; padding:1em; width:280px;}
 
+/* ************
+ Plugin Styles 
+ *************/
 
+ /*Supersize Plugin Styles*/
+body { height:100%; }
+  img{ border:none; }
+  
+  #supersized-loader { position:absolute; top:50%; left:50%; z-index:0; width:60px; height:60px; margin:-30px 0 0 -30px; text-indent:-999em; background:url(../img/progress.gif) no-repeat center center;}
+  
+  #supersized { position:fixed; left:0; top:0; overflow:hidden; z-index:-999; height:100%; width:100%; }
+    #supersized img{ width:auto; height:auto; position:relative; outline:none; border:none; }
+    
+    #supersized a { z-index:-30; position:fixed; overflow:hidden; top:0; left:0; width:100%; height:100%; background:#111; display:block; }
+      #supersized a.image-loading { background:#4a6c87 url(../img/progress.gif) no-repeat center center; width:100%; height:100%; }
 
 
 
