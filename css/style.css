@@ -93,7 +93,7 @@ hgroup { text-align:center; }
 /* Header */
 #banner {display: block; width:100%; max-width:1920px; margin:0 auto;}
 header {position: relative;}
-header article {margin-top:30%; float:right; background:#fff; padding:1em; width:280px;}
+header article {margin-top:30%; float:right; background:#fff; padding:1em; width:40em; border:1px solid #666;}
 
 /* ************
  Plugin Styles 
