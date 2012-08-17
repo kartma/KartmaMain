@@ -118,10 +118,10 @@ box-shadow: 0 0 5px #111;
 header { display: block; width:90%; margin:0 auto; }
 section, footer {display: block; width:100%; margin:0;}
 hgroup, section article { margin:0 auto; }
-article, #JohnBukaty {max-width: 1200px; width:90%;}
+article, #bukatyWrapper {max-width: 1200px; width:90%;}
 
 /* Navigation */
-nav { background:url(../img/canvasTexture.jpg); position:fixed; top:0; width:100%; padding: 0.5em 0; z-index:1;}
+nav { background:url(../img/canvasTexture.jpg); position:fixed; top:0; width:100%; padding: 0.5em 0; z-index:1000;}
 hgroup { width:90%; }
 #mainLogo {float:left;}
 #mainLogo { width:20%; }
@@ -133,11 +133,15 @@ header article {margin-top:30%; float:right; background:#fff; padding:2em 1em 1e
 
 /* About */
 #about { background: url(../img/canvasTexture.jpg) #fff repeat-x; padding:4em 0 4em; margin-top:-2.5%;}
+#about article {padding-top:2em;}
 
 /* Bukaty */
-#bukaty {background:url(../img/bukatySpot_bkground.jpg) repeat-x left top; background-size:auto 100%; width:100%; position: relative; height:25em; z-index:900;}
-#JohnBukaty {display:block; margin:0 auto;}
-#JohnBukaty img:first-child {margin-top: -3.2em; height: 113%;}
+#bukatyHeader {background:url(../img/bukatySpot_bkground.jpg) repeat-x left top; background-size:auto 100%; width:100%; height:auto; position: relative; z-index:200;}
+#bukatyWrapper {display:block; margin:0 auto; text-align:center;}
+img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
+#bukaty {background:#4054a5; color:#fff; z-index:300; position: relative; padding:1em 0;}
+#bukaty article h1 {display: block; width:100%;}
+#bukaty article img {float:right; width:50%;}
 
 
 /* Contact */
@@ -179,10 +183,11 @@ body { height:100%; }
 /* All Mobile Sizes (devices and browser) */
   @media only screen and (max-width: 767px) {
     /* Typography */
+    h1 {font-size:2em;}
 
     /* Nav */
-    nav { position:inherit; top:auto; }
-    #mainLogo { width:35%;}
+    nav { position:inherit; top:auto; text-align:center; }
+    #mainLogo { width:50%;}
 
     
     /* Header */
@@ -210,6 +215,9 @@ body { height:100%; }
 
     /* Header */
     header article.shadow {margin: 60% auto 0;}
+
+    /* Bukaty */
+    img#JohnBukaty {width:80%; margin:0 auto;}
    }
 
 
