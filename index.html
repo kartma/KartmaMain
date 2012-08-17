@@ -62,6 +62,9 @@
       <img src="img/events/wakarusa_logo.png" title="Wakarusa" alt="Wakarusa">
       <img src="img/events/noJazzFest_logo.jpg" title="New Orleans Jazz Fest" alt="New Orleans Jazz Fest">
     </div><!-- end #seenAt_Logos -->
+    <div id="galleriaWrap" class="clearfix">
+      <article id="galleria"></article>
+    </div><!-- end #galleriaWrap -->
   </section>
 
   <footer>
@@ -75,6 +78,10 @@
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
   <script src="js/supersized.js"></script>
+  <!-- load Galleria -->
+  <script src="js/galleria/galleria-1.2.8.min.js"></script>
+  <!-- load picasa plugin -->
+  <script src="js/galleria/plugins/picasa/galleria.picasa.min.js"></script>
 
   <script>
     jQuery(function($){
@@ -92,6 +99,20 @@
       }, 600);
       $('nav, #container').delay(1200).slideDown(2000);
     
+  });
+  </script>
+
+  <script>
+  // Load the classic theme
+  Galleria.loadTheme('js/galleria/themes/classic/galleria.classic.min.js');
+
+  // Initialize Galleria
+  Galleria.run('#galleria', {
+      picasa: 'useralbum:110191036223292858666/Kartma',
+      picasaOptions: {
+          sort: 'date-posted-desc',
+          imageSize: 'big'
+      }
   });
   </script>
 

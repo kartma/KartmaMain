@@ -147,10 +147,14 @@ img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
 #bukaty article img {float:right; width:50%;}
 
 /* Seen At */
-#seenAt {}
+#seenAt {padding-bottom:0; border-bottom:1em solid #fff;}
 #seenAt h1 {padding:0.5em; border-bottom:1px solid #999;}
 #seenAt_Logos {text-align:center;}
 #seenAt_Logos img {padding:1em 1%; max-width:23%; max-height:7.5em;}
+
+/* Gallery */
+#galleriaWrap {background:#fff;}
+#galleria {width:100%;}
 
 /* Contact */
 #contact { }
@@ -162,18 +166,20 @@ footer {text-align: center; padding:0.2em 0; background:#333; color:#fff;}
  Plugin Styles 
  *************/
 
- /*Supersize Plugin Styles*/
+/*Supersize Plugin Styles*/
 body { height:100%; }
-  img{ border:none; }
-  
-  #supersized-loader { position:absolute; top:50%; left:50%; z-index:0; width:60px; height:60px; margin:-30px 0 0 -30px; text-indent:-999em; background:url(../img/progress.gif) no-repeat center center;}
-  
-  #supersized { position:fixed; left:0; top:0; overflow:hidden; z-index:-999; height:100%; width:100%; }
-    #supersized img{ width:auto; height:auto; position:relative; outline:none; border:none; }
-    
-    #supersized a { z-index:-30; position:fixed; overflow:hidden; top:0; left:0; width:100%; height:100%; background:#111; display:block; }
-      #supersized a.image-loading { background:#4a6c87 url(../img/progress.gif) no-repeat center center; width:100%; height:100%; }
+img{ border:none; }
+#supersized-loader { position:absolute; top:50%; left:50%; z-index:0; width:60px; height:60px; margin:-30px 0 0 -30px; text-indent:-999em; background:url(../img/progress.gif) no-repeat center center;}
+#supersized { position:fixed; left:0; top:0; overflow:hidden; z-index:-999; height:100%; width:100%; }
+#supersized img{ width:auto; height:auto; position:relative; outline:none; border:none; }
+#supersized a { z-index:-30; position:fixed; overflow:hidden; top:0; left:0; width:100%; height:100%; background:#111; display:block; }
+#supersized a.image-loading { background:#4a6c87 url(../img/progress.gif) no-repeat center center; width:100%; height:100%; }
 
+/* Galleria Plugin Styles */
+#galleria{height:35em; min-height:10em; max-height:50em;}
+.galleria-image-nav-right, .galleria-image-nav-left, .galleria-thumb-nav-left, .galleria-thumb-nav-right {background-color:#666;}
+.galleria-image-nav-right {border-right: 1em solid #666;}
+.galleria-image-nav-left {border-left: 1em solid #666;}
 
 /* ************
  Device Styles 
@@ -211,6 +217,9 @@ body { height:100%; }
     /* Bukaty */
     img#JohnBukaty {width:100%; margin-right:0;}
     #bukaty article img {display: block; float: none; width:100%;}
+
+    /* Seen At */
+    #seenAt_Logos img {max-width:30%;}
 
 
   }
