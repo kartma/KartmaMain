@@ -27,8 +27,8 @@ html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10
 html, button, input, select, textarea { font-family: sans-serif; color: #222; }
 body { margin: 0; font-size: 1em; line-height: 1.4; }
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #D46A05; color: #fff; text-shadow: none; }
+::selection { background: #D46A05; color: #fff; text-shadow: none; }
 
 a { color: #00e; }
 a:visited { color: #551a8b; }
@@ -125,13 +125,13 @@ hgroup, section article { margin:0 auto; }
 article, #bukatyWrapper {max-width: 1200px; width:90%;}
 
 /* Navigation */
-nav {background:url(../img/canvasTexture.jpg); position:fixed; top:0; width:100%; padding: 0.5em 0; z-index:1000;}
+nav {background:url(../img/canvasTexture.jpg); position:fixed; top:0; left:0; width:100%; padding: 0.5em 0; z-index:1000;}
 nav a, nav a:visited, nav a:active {font-size:2em; margin-left:1em; color:#666; font-family:'BebasNeueRegular', sans-serif; text-transform:uppercase;}
 nav a:hover {color:#333;}
 hgroup {width:90%;}
 #mainLogo {float:left;}
 #mainLogo {min-width:10%; max-width:30%;}
-#mainNav {float:right; text-align:right; margin-top:0.82%;}
+#mainNav {float:right; text-align:right; margin-top:1.2%;}
 #buyPrints {color:#d46a05;}
 #buyPrints:hover {color:#000;}
 
@@ -165,7 +165,9 @@ img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
 .galleria-thumbnails {margin:0 auto;}
 
 /* Contact */
-#contact { }
+#contact {background:#deeaf6; background-size: auto 100%; padding-bottom:0; overflow: hidden;}
+#cityFooter {margin:-10% 0 -3%; width:100%; z-index:400;}
+#cityFooter h1 {font-size:6em; z-index:500;}
 
 /* Footer */
 footer {text-align: center; padding:0.2em 0; background:#333; color:#fff;}
