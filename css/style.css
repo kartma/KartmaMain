@@ -89,6 +89,7 @@ td { vertical-align: top; }
 /* Global Styles */
 body {background:#111; font-family:helvetica, sans-serif; color: #333;}
 h1 img, h2 img { height:1em; }
+.center {display:block; margin:0 auto;}
 
 /* Brand Colors */
 .blue { color:#4e6b66; }
@@ -99,9 +100,10 @@ h1 img, h2 img { height:1em; }
 
 /* Typography */
 .title{font-family:'BebasNeueRegular';}
+.title img {max-width:100%;}
 h1 {-webkit-margin-before: 0; -webkit-margin-after: 0;}
 h1 {font-size:4em; margin: 0; line-height: 1em;}
-h2 {font:;}
+h2 {font-size:2em;}
 p { font-size:1.4em; }
 
 /* Animation Styles */
@@ -117,6 +119,7 @@ box-shadow: 0 0 5px #111;
 /* Global & Main Containers */
 header { display: block; width:90%; margin:0 auto; }
 section, footer {display: block; width:100%; margin:0;}
+section {background:#fff; padding:1em 0;}
 hgroup, section article { margin:0 auto; }
 article, #bukatyWrapper {max-width: 1200px; width:90%;}
 
@@ -143,6 +146,11 @@ img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
 #bukaty article h1 {display: block; width:100%;}
 #bukaty article img {float:right; width:50%;}
 
+/* Seen At */
+#seenAt {}
+#seenAt h1 {padding:0.5em; border-bottom:1px solid #999;}
+#seenAt_Logos {text-align:center;}
+#seenAt_Logos img {padding:1em 1%; max-width:23%; max-height:7.5em;}
 
 /* Contact */
 #contact { }
@@ -187,19 +195,24 @@ body { height:100%; }
 
     /* Nav */
     nav { position:inherit; top:auto; text-align:center; }
-    #mainLogo { width:50%;}
+    #mainLogo { width:50%; float: none;}
 
     
     /* Header */
     header article.shadow {float: none; width: 90%; margin: 50% auto 0; padding: 5%;}
     header article.shadow img {display: block; margin:0 auto;}
 
-
     /* Content */
     body {font-size:0.8em;}
     section {width:100%;}
     section article {width:80%;}
     article img {width:90%; height:auto; display: block; margin:0 auto;}
+
+    /* Bukaty */
+    img#JohnBukaty {width:100%; margin-right:0;}
+    #bukaty article img {display: block; float: none; width:100%;}
+
+
   }
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
@@ -211,13 +224,11 @@ body { height:100%; }
   /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
   @media only screen and (max-width: 480px) {
     /* Nav */
+    nav {text-align:center;}
     #mainLogo { width:50%;}
 
     /* Header */
     header article.shadow {margin: 60% auto 0;}
-
-    /* Bukaty */
-    img#JohnBukaty {width:80%; margin:0 auto;}
    }
 
 
