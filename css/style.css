@@ -154,7 +154,7 @@ img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
 #bukaty article img {float:right; width:50%;}
 
 /* Seen At */
-#seenAt {padding-bottom:0; border-bottom:1em solid #fff;}
+#seenAt {padding-bottom:0;border-bottom:1px solid #111;}
 #seenAt h1 {padding:0.5em; border-bottom:1px solid #999;}
 #seenAt_Logos {text-align:center;}
 #seenAt_Logos img {padding:1em 1%; max-width:23%; max-height:7.5em;}
@@ -164,10 +164,81 @@ img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
 #galleria {width:100%;}
 .galleria-thumbnails {margin:0 auto;}
 
+/* Events */
+#events{
+ background:url(../img/canvasTexture.jpg);
+}
+#events .ui-upcoming-events{
+  margin: 55px auto 30px;
+  display: block;
+}
+#events table{
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  width: 918px;
+}
+#events a{
+  color: #D0D0CE;
+}
+#events th{
+  text-transform: uppercase;
+  color: #5A5E5F;
+  padding: 0 8px;
+  text-align: left;
+  position: relative;
+  top: 12px;
+}
+#events td{
+  background: #61605E;
+  padding: 4px 8px;
+  color: #D0D0CE;
+}
+#events .info{
+  text-align: right;
+}
+
 /* Contact */
-#contact {background:#deeaf6; background-size: auto 100%; padding-bottom:0; overflow: hidden;}
-#cityFooter {margin:-10% 0 -3%; width:100%; z-index:400;}
-#cityFooter h1 {font-size:6em; z-index:500;}
+#contact{
+  background: #deeaf6;
+  background-size: auto 100%;
+  padding-bottom:0;
+  overflow: hidden;
+}
+#contact form{
+  margin: auto;
+  width: 918px;
+}
+#contact label{
+  display: block;
+  font-size: 40px;
+}
+#contact textarea,
+#contact [type="text"]{
+  width: 506px;
+  padding: 8px;
+}
+#contact textarea{
+  height: 120px;
+  resize: none;
+}
+#contact .book-prompt{
+  float: none;
+  overflow: hidden;
+}
+#contact .footer-bg{
+  margin:-10% 0 -3%;
+  width:100%;
+  z-index:400;
+}
+#contact .left{
+  margin-right: 10px;
+}
+
+/* Position */
+.left{
+  float: left;
+}
 
 /* Footer */
 footer {text-align: center; padding:0.2em 0; background:#333; color:#fff;}

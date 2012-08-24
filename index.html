@@ -76,16 +76,48 @@
     </div><!-- end #galleriaWrap -->
   </section>
 
-  <section id="events" class="clearfix">
-    <div class="ui-upcoming-events">Upcoming Events</div>
-    
+  <section id="events" class="clearfix shadow">
+    <img class="ui-upcoming-events" src="img/eventsTitle.png" />
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Event Name</th>
+          <th>Location</th>
+          <th class="info">More Info</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--js-->
+      </tbody>
+    </table>
   </section>
 
   <section id="contact" class="clearfix shadow">
+
+    <form name="contact.php">
+      <div class="left">
+        <fieldset>
+          <label for="form-message">Send Us a Message</label>
+          <textarea id="form-message"></textarea>
+        </fieldset>
+        <fieldset>
+          <label for="form-email">Your Email</label>
+          <input id="form-email" type="text"/>
+        </fieldset>
+      </div>
+      <fieldset class="book-prompt">
+        <label for="form-booking">Interested in booking Kartma for your event?</label>
+        <input id="form-booking" type="checkbox"/>
+        <label for="form-booking">Yes, Please!</label>
+      </fieldset>
+      <input type="submit" name="submit" value="Send Response">
+    </form>
+
     <article>
       <p>For more informations and bookings, please contact us at:</p>
       <h1 class="title orange">info(@)kartma.com</h1>
-      <img id="cityFooter" src="img/footerBackground.png">
+      <img class="footer-bg" src="img/footerBackground.png">
     </article>
   </section>
 
@@ -145,4 +177,5 @@
     s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
 </body>
+
 </html>
