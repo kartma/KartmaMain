@@ -204,6 +204,8 @@ img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
   background-size: auto 100%;
   padding-bottom:0;
   overflow: hidden;
+  color: #656565;
+  padding-top: 30px;
 }
 #contact form{
   margin: auto;
@@ -211,7 +213,9 @@ img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
 }
 #contact label{
   display: block;
-  font-size: 40px;
+  font-size: 52px;
+  text-transform: uppercase;
+  font-family: 'BebasNeueRegular', sans-serif;
 }
 #contact textarea,
 #contact [type="text"]{
@@ -225,19 +229,65 @@ img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
 #contact .book-prompt{
   float: none;
   overflow: hidden;
+  padding-top: 68px;
+  line-height: 3.5em;
 }
 #contact .footer-bg{
-  margin:-10% 0 -3%;
-  width:100%;
-  z-index:400;
+  /* margin: -10% 0 -3%; */
+  width: 100%;
 }
 #contact .left{
-  margin-right: 10px;
+  margin-right: 65px;
+  float: left;
+}
+#contact .submit{
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+#contact [type="submit"]{
+  display: block;
+  margin: 40px auto 0;
+  text-transform: uppercase;
+  padding: 5px 100px;
+  background: #CCCCCC;
+  font-size: 30px;
+  font-family: 'BebasNeueRegular', sans-serif;
+  color: #333;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
 }
 
-/* Position */
-.left{
+.book-prompt .cta{
+  color: #D46A05;
+}
+
+.error{
+  display: none;
+}
+
+.checkbox{
+  display: block;
+  height: 50px;
+  width: 50px;
   float: left;
+  background: url(../img/formState_blank.png) no-repeat #fff;
+  margin-right: 10px;
+}
+.checkbox.checked{
+  background: url(../img/formState_checked.png) no-repeat #fff;
+}
+#interest-checkbox{
+  margin-top: 36px;
+  line-height: 3em;
+}
+#interest-checkbox label{
+  display: inline;
+  text-transform: none;
+  font-family: Arial;
+  font-size: 44px;
 }
 
 /* Footer */

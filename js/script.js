@@ -59,49 +59,102 @@ function upcomingEvent(event){
 
 // Form Validation/Processing
 $(function() {
-  $('.error').hide();
+  var $form = $('#contact-form')
 
-  $(".button").click(function() {
-    // validate and process form
-    // first hide any error messages
-    $('.error').hide();
-    
-    var name = $("input#name").val();
-    if (name == "") {
-      $("label#name_error").show();
-      $("input#name").focus();
-      return false;
-    }
-    var email = $("input#email").val();
-    if (email == "") {
-      $("label#email_error").show();
-      $("input#email").focus();
-      return false;
-    }
-    var message = $("textarea#comment").val();
-    if (message == "") {
-      $("label#comment_error").show();
-      $("textarea#comment").focus();
-      return false;
-    }
-    
-    var dataString = 'name='+ name + '&email=' + email + '&message=' + message;
-    //alert (dataString);return false;
+    // fields
+    , $message = $form.find('#form-message')
+    , $email   = $form.find('#form-email')
 
-    $.ajax({
-      type: "POST",
-      url: "contact.php",
-      data: dataString,
-      success: function() {
-        $('#contact_form').html("<div id='message'></div>");
-        $('#message').html("<h2>Contact Form Submitted!</h2>")
-        .append("<p>We will be in touch soon.</p>")
-        .hide()
-        .fadeIn(1500, function() {
-          $('#message').append("");
-        });
-      }
-     });
-    return false;
+    // settings
+    , shade = 'red'
+
+    , error, data
+  ;//var
+
+  $form.find('.button').click(function(e){
+    e.preventDefault();
+
+    error = false;
+
+    if($email.val() == ''){
+      $('#form-email-label').css({'color':shade});
+      $email
+        .css({
+          'outline-color':shade,
+          'border-color' :shade
+        })
+        .focus();
+      error = true;
+    }
+    else{
+      $('#form-email-label')
+        .css({'color':''});
+      $email
+        .css({
+          'outline-color':'',
+          'border-color' :''
+        })
+    }
+
+    if($message.val() == ''){
+      $('#form-message-label').css({color:shade});
+      $message
+        .css({
+          'outline-color':shade,
+          'border-color':shade
+        })
+        .focus();
+      error = true;
+    }
+    else{
+      $('#form-message-label').css({'color':''});
+      $message
+        .css({
+          'outline-color':'',
+          'border-color' :''
+        })
+    }
+
+    if(error) return;
+
+    data = $form.serialize()
+
+    console.log('POSTING', data);
+
+    $.post('contact.php', data, function(res){
+      alert('THANKS');
+    });
   });
+
+  var $checkbox = $('<div class="checkbox"/>').click(function(e){
+    //$(this).find('input').trigger('change');
+  });
+
+  $('[type="checkbox"]')
+    .css({opacity:0,position:'absolute',left:0,top:0,'z-index':-999})
+    .wrap($checkbox)
+    .change(function(e){
+      var $this   = $(this)
+        , $visual = $this.parent()
+      ;//var
+
+      $visual.toggleClass('checked');
+    })
+  ;//checkbox
+
+
+    // $.ajax({
+    //   type: "POST",
+    //   url: "contact.php",
+    //   data: dataString,
+    //   success: function() {
+    //     $('#contact_form').html("<div id='message'></div>");
+    //     $('#message').html("<h2>Contact Form Submitted!</h2>")
+    //     .append("<p>We will be in touch soon.</p>")
+    //     .hide()
+    //     .fadeIn(1500, function() {
+    //       $('#message').append("");
+    //     });
+    //   }
+    //  });
 });
