@@ -95,6 +95,16 @@ $(function() {
         .focus();
       error = true;
     }
+    else if(!/.+@.+\..+/.test(email)){
+      $('#form-email-label').css({'color':shade});
+      $email
+        .css({
+          'outline-color':shade,
+          'border-color' :shade
+        })
+        .focus();
+      error = true;
+    }
     else{
       $('#form-email-label')
         .css({'color':''});
@@ -133,8 +143,23 @@ $(function() {
     });
 
     $.post('contact.php', data, function(res){
-      console.log(data);
-      alert('THANKS');
+      var $contact  = $('#contact')
+
+        , $response = $('<div class="response"/>')
+        , $logo     = $('#mainLogo').clone().attr('id','')
+        , $message  = $('<p>Thanks for contacting us! We\'ll be in touch soon!</p>')
+      ;//var
+
+      $response
+        .append($logo)
+        .append($message)
+        .height($form.height())
+      ;//$response
+
+      $form.animate({opacity:0}, function(){
+        $form.replaceWith($response);
+        $response.animate({height:150,opacity:1});
+      });
     });
   });
 
@@ -162,20 +187,4 @@ $(function() {
       $visual.toggleClass('checked');
     })
   ;//$temp
-
-
-    // $.ajax({
-    //   type: "POST",
-    //   url: "contact.php",
-    //   data: dataString,
-    //   success: function() {
-    //     $('#contact_form').html("<div id='message'></div>");
-    //     $('#message').html("<h2>Contact Form Submitted!</h2>")
-    //     .append("<p>We will be in touch soon.</p>")
-    //     .hide()
-    //     .fadeIn(1500, function() {
-    //       $('#message').append("");
-    //     });
-    //   }
-    //  });
 });
