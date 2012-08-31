@@ -176,7 +176,8 @@ img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
   margin: auto;
   border-collapse: separate;
   border-spacing: 0 8px;
-  width: 918px;
+  width: 100%;
+  max-width: 918px;
 }
 #events a{
   color: #D0D0CE;
@@ -209,7 +210,8 @@ img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
 }
 #contact form{
   margin: auto;
-  width: 918px;
+  width: 100%;
+  max-width: 918px;
 }
 #contact label{
   display: block;
@@ -219,7 +221,7 @@ img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
 }
 #contact textarea,
 #contact [type="text"]{
-  width: 506px;
+  width: 100%;
   padding: 8px;
 }
 #contact textarea{
@@ -227,18 +229,20 @@ img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
   resize: none;
 }
 #contact .book-prompt{
-  float: none;
+  float: right;
   overflow: hidden;
   padding-top: 68px;
   line-height: 3.5em;
+  max-width: 318px;
 }
 #contact .footer-bg{
   /* margin: -10% 0 -3%; */
   width: 100%;
 }
-#contact .left{
-  margin-right: 65px;
-  float: left;
+#contact .flow{
+  overflow: hidden;
+  min-width: 320px;
+  padding-right: 65px;
 }
 #contact .submit{
   display: block;
@@ -380,6 +384,18 @@ img{ border:none; }
     header article.shadow {margin: 60% auto 0;}
    }
 
+@media (max-width: 785px){
+  #contact .book-prompt{
+    float: none;
+    padding-bottom: 3em;
+    max-width: 100%;
+  }
+  #contact .book-prompt .cta{
+    font-size: 70px;
+    line-height: 1em;
+  }
+}
+
 
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
 .ir br { display: none; }
@@ -412,3 +428,26 @@ img{ border:none; }
   position: relative;
   opacity: 0;
 }
+
+#donate ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#donate li{
+  width: 32%;
+  margin-left: 1%;
+  float: left;
+  border: 1px solid #ccc;
+  font-family: 'BebasNeueRegular', sans-serif;
+  font-size: 2em;
+}
+#donate li:first-child{
+  margin-left: 0;
+}
+#donate img{
+  width: 100%;
+  height: auto;
+}
+
+

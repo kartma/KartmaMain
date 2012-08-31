@@ -1,50 +1,66 @@
 /* Author:
 
 */
-var sampleEvents = [
-  {
-    date    : 'Aug 12, 2012',
-    name    : 'Silopanna Music Festivale',
-    location: 'Annapolis, MD',
-    url     : 'http://google.com'
-  },
-  {
-    date    : 'Aug 12, 2012',
-    name    : 'Silopanna Music Festivale',
-    location: 'Annapolis, MD',
-    url     : 'http://google.com'
-  },
-  {
-    date    : 'Aug 12, 2012',
-    name    : 'Silopanna Music Festivale',
-    location: 'Annapolis, MD',
-    url     : 'http://google.com'
-  },
-  {
-    date    : 'Aug 12, 2012',
-    name    : 'Silopanna Music Festivale',
-    location: 'Annapolis, MD',
-    url     : 'http://google.com'
+
+var app = {
+  access_token: 'AAACEdEose0cBAMkCbGMDjeeJPDKZAT2q1p78uevUjMiYdwZBAHm4qemSXyT6JK3AjgWhSfTDJCfcZCXBxyrFe074jJ9IlnaZCUYHi4LkpgZDZD'
+};
+
+var monthAbbr = ['Jan','Feb','March','April','May','June','July','Aug','Sept','Oct','Nov','Dec'];
+$.ajax({
+  dataType: 'jsonp',
+  data: app,
+  url: 'https://graph.facebook.com/126902114116673/events',
+  success: function(res){
+    app.events = res.data || [];
+    app.events.forEach(normalizeEvent);
+    $(buildEvents);
   }
+});
+
+$(buildDonations);
+
+app.donations = [
+{
+  amount: '$1000',
+  image: 'http://images4.fanpop.com/image/photos/23500000/horse-horses-23582505-1024-768.jpg',
+  url: 'http://google.com'
+},
+{
+  amount: '$30',
+  image: 'http://images4.fanpop.com/image/photos/23500000/horse-horses-23582505-1024-768.jpg',
+  url: 'http://google.com'
+},
+{
+  amount: '$100',
+  image: 'http://images4.fanpop.com/image/photos/23500000/horse-horses-23582505-1024-768.jpg',
+  url: 'http://google.com'
+}
 ];
 
-$(buildUpcomingEvents);
-
-function buildUpcomingEvents(){
-  var markup = upcomingEventList(sampleEvents);
-
-  $('#events tbody').append(markup);
+function normalizeEvent(event){
+  var time = new Date(event.start_time);
+  event.url = 'http://facebook.com/' + event.id;
+  event.date = monthAbbr[time.getMonth()] + ' ' + time.getDay() + ', ' + time.getFullYear();
 }
 
-function upcomingEventList(collection){
+function buildDonations(){
+  $('#donate ul').append(buildList(app.donations, singleDonation));
+}
+
+function buildEvents(){
+  $('#events tbody').append(buildList(app.events, singleEvent));
+}
+
+function buildList(collection, view){
   var html = [];
   for(var i = 0, l = collection.length; i < l; i++)
-    html.push( upcomingEvent(collection[i]) );
+    html.push( view(collection[i]) );
 
   return html.join('');
 }
 
-function upcomingEvent(event){
+function singleEvent(event){
   var html = [];
 
   html.push('<tr>');
@@ -56,6 +72,16 @@ function upcomingEvent(event){
 
   return html.join('');
 }
+
+function singleDonation(item){
+  var html = [];
+
+  html.push('<li class="orange">');
+  html.push('<img src="' + item.image + '"/>');
+  html.push('<div>' + item.amount + '</div>');
+
+  return html.join('');
+};
 
 // Form Validation/Processing
 $(function() {

@@ -31,7 +31,7 @@
     </div><!-- end #mainNav -->
     </hgroup>
   </nav>
-  
+
   <header class="clearfix">
     <article class="shadow">
       <h1>
@@ -76,47 +76,56 @@
     </div><!-- end #galleriaWrap -->
   </section>
 
+  <section id="donate" class="clearfix shadow">
+    <article>
+      <ul><!--js--></ul>
+    </article>
+  </section>
+
   <section id="events" class="clearfix shadow">
-    <img class="ui-upcoming-events" src="img/eventsTitle.png" />
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Event Name</th>
-          <th>Location</th>
-          <th class="info">More Info</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!--js-->
-      </tbody>
-    </table>
+    <article>
+      <img class="ui-upcoming-events" src="img/eventsTitle.png" />
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Event Name</th>
+            <th>Location</th>
+            <th class="info">More Info</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--js-->
+        </tbody>
+      </table>
+    </article>
   </section>
 
   <section id="contact" class="clearfix shadow">
-
-    <form id="contact-form" name="contact.php">
-      <div class="left">
-        <fieldset>
-          <label id="form-message-label" for="form-message">Send Us a Message</label>
-          <textarea name="message" id="form-message"></textarea>
+    <article>
+      <form id="contact-form" name="contact.php">
+        <fieldset class="book-prompt">
+          <label class="cta" for="form-booking">Interested in booking Kartma for your event?</label>
+          <div id="interest-checkbox">
+            <input name="event-interest" id="form-booking" type="checkbox"/>
+            <label for="form-booking">Yes, Please!</label>
+          </div>
         </fieldset>
-        <fieldset>
-          <label id="form-email-label" for="form-email">Your Email</label>
-          <input name="email" id="form-email" type="text"/>
-        </fieldset>
-      </div>
-      <fieldset class="book-prompt">
-        <label class="cta" for="form-booking">Interested in booking Kartma for your event?</label>
-        <div id="interest-checkbox">
-          <input name="event-interest" id="form-booking" type="checkbox"/>
-          <label for="form-booking">Yes, Please!</label>
+        <div class="flow">
+          <fieldset>
+            <label id="form-message-label" for="form-message">Send Us a Message</label>
+            <textarea name="message" id="form-message"></textarea>
+          </fieldset>
+          <fieldset>
+            <label id="form-email-label" for="form-email">Your Email</label>
+            <input name="email" id="form-email" type="text"/>
+          </fieldset>
         </div>
-      </fieldset>
-      <span class="submit"><input class="button" type="submit" name="submit" value="Send Response"></span>
-    </form>
+        <span class="submit"><input class="button" type="submit" name="submit" value="Send Response"></span>
+      </form>
 
-    <img class="footer-bg" src="img/footerBackground.png">
+      <img class="footer-bg" src="img/footerBackground.png">
+    </article>
   </section>
 
   <footer>
