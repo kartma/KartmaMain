@@ -108,7 +108,7 @@ Optional.  Enter a From: email address.  Only do this if you know you need to.  
 
 */
 
-$from_email = "";
+$from_email = "info@kartma.org";
 
 /*
 

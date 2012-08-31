@@ -62,8 +62,12 @@ $(function() {
   var $form = $('#contact-form')
 
     // fields
-    , $message = $form.find('#form-message')
-    , $email   = $form.find('#form-email')
+    , $message  = $form.find('#form-message')
+    , $email    = $form.find('#form-email')
+    , $interest = $form.find('#form-booking')
+
+    // values
+    , message, email, interest
 
     // settings
     , shade = 'red'
@@ -73,10 +77,15 @@ $(function() {
 
   $form.find('.button').click(function(e){
     e.preventDefault();
-
     error = false;
 
-    if($email.val() == ''){
+    message  = $message.val();
+    email    = $email.val();
+    interest = $interest.prop('checked');
+
+    interest = interest? 'YES' : 'NO';
+
+    if(email == ''){
       $('#form-email-label').css({'color':shade});
       $email
         .css({
@@ -93,10 +102,10 @@ $(function() {
         .css({
           'outline-color':'',
           'border-color' :''
-        })
+        });
     }
 
-    if($message.val() == ''){
+    if(message == ''){
       $('#form-message-label').css({color:shade});
       $message
         .css({
@@ -112,25 +121,37 @@ $(function() {
         .css({
           'outline-color':'',
           'border-color' :''
-        })
+        });
     }
 
     if(error) return;
 
-    data = $form.serialize()
-
-    console.log('POSTING', data);
+    data = $.param({
+      'Email'  : email,
+      'Message': message,
+      'Interested In Booking': interest
+    });
 
     $.post('contact.php', data, function(res){
+      console.log(data);
       alert('THANKS');
     });
   });
 
   var $checkbox = $('<div class="checkbox"/>').click(function(e){
-    //$(this).find('input').trigger('change');
+    var $input = $(this).find('input');
+
+    if($input.length)
+      $input.prop('checked', !$input.prop('checked')).trigger('change');
   });
 
-  $('[type="checkbox"]')
+  var $temp = $('[type="checkbox"]');
+
+  $('.book-prompt label').click(function(e){
+    $temp.prop('checked', !$temp.prop('checked')).trigger('change');
+  });
+
+  $temp
     .css({opacity:0,position:'absolute',left:0,top:0,'z-index':-999})
     .wrap($checkbox)
     .change(function(e){
@@ -140,7 +161,7 @@ $(function() {
 
       $visual.toggleClass('checked');
     })
-  ;//checkbox
+  ;//$temp
 
 
     // $.ajax({
