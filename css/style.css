@@ -373,6 +373,19 @@ img{ border:none; }
     /* Seen At */
     #seenAt_Logos img {max-width:30%;}
 
+    /* Contact */
+    #contact .title img {width:100%; height:auto;}
+    #contact .book-prompt{
+      float: none;
+      padding-bottom: 3em;
+      max-width: 100%;
+    }
+    #contact .book-prompt .cta{
+      font-size: 70px;
+      line-height: 1em;
+    }
+    #contact .submit .button {width:100%;}
+
 
   }
 
@@ -391,19 +404,6 @@ img{ border:none; }
     /* Header */
     header article.shadow {margin: 60% auto 0;}
    }
-
-@media (max-width: 785px){
-  #contact .book-prompt{
-    float: none;
-    padding-bottom: 3em;
-    max-width: 100%;
-  }
-  #contact .book-prompt .cta{
-    font-size: 70px;
-    line-height: 1em;
-  }
-}
-
 
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
 .ir br { display: none; }
