@@ -30,9 +30,9 @@ body { margin: 0; font-size: 1em; line-height: 1.4; }
 ::-moz-selection { background: #D46A05; color: #fff; text-shadow: none; }
 ::selection { background: #D46A05; color: #fff; text-shadow: none; }
 
-a { color: #00e; }
-a:visited { color: #551a8b; }
-a:hover { color: #06e; }
+a { color: #d46a05; }
+a:visited { color: ##d46a05; }
+a:hover { color: #333; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
 abbr[title] { border-bottom: 1px dotted; }
@@ -100,7 +100,7 @@ a {text-decoration:none;}
 .black { color:#333; }
 
 /* Typography */
-.title{font-family:'BebasNeueRegular';}
+.title{font-family:'BebasNeueRegular'; padding:0.5em 0;}
 .title img {max-width:100%;}
 h1 {-webkit-margin-before: 0; -webkit-margin-after: 0;}
 h1 {font-size:4em; margin: 0; line-height: 1em;}
@@ -126,7 +126,7 @@ article, #bukatyWrapper {max-width: 1200px; width:90%;}
 
 /* Navigation */
 nav {background:url(../img/canvasTexture.jpg); position:fixed; top:0; left:0; width:100%; padding: 0.5em 0; z-index:1000;}
-nav a, nav a:visited, nav a:active {font-size:2em; margin-left:1em; color:#666; font-family:'BebasNeueRegular', sans-serif; text-transform:uppercase;}
+nav a, nav a:visited, nav a:active {font-size:1.75em; margin-left:1em; color:#666; font-family:'BebasNeueRegular', sans-serif; text-transform:uppercase;}
 nav a:hover {color:#333;}
 hgroup {width:90%;}
 #mainLogo {float:left;}
@@ -157,7 +157,7 @@ img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
 #seenAt {padding-bottom:0;border-bottom:1px solid #111;}
 #seenAt h1 {padding:0.5em; border-bottom:1px solid #999;}
 #seenAt_Logos {text-align:center;}
-#seenAt_Logos img {padding:1em 1%; max-width:23%; max-height:7.5em;}
+#seenAt_Logos img {padding:1em 1%; max-width:13%; max-height:7.5em;}
 
 /* Gallery */
 #galleriaWrap {background:#fff;}
@@ -168,11 +168,6 @@ img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
 #events{
  background:url(../img/canvasTexture.jpg);
  padding-bottom: 4em;
-}
-#events .ui-upcoming-events{
-  margin: 7% auto 4%;
-  display: block;
-  height: auto;
 }
 #events table{
   margin: auto;
@@ -186,9 +181,14 @@ img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
   display: block;
   margin: auto;
 }
-#events a{
+#events table a{
   color: #D0D0CE;
 }
+
+#events table a:hover{
+  color: #fff;
+}
+
 #events th{
   text-transform: uppercase;
   color: #5A5E5F;
@@ -328,10 +328,11 @@ img{ border:none; }
  *************/
 
 /* Smaller than standard 1200 (devices and browsers) */
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 1300px) {
    /* Navigation */
    #mainLogo {display: block; margin:0 auto; float:none;}
-   #mainNav {display: block; float: none; text-align:center; clear:both; line-height: 0; padding: 1.2em 0 0.2em;}
+   #mainNav {display: block; float: none; text-align:center; clear:both; line-height: 0; padding: 1.2em 0 0.2em; }
+   nav a, nav a:visited, nav a:active { font-size: 1.5em; }
 
    /* Header */
    header article {margin-top:50%;}

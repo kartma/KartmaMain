@@ -1,13 +1,10 @@
 /* Author:
 
-  Chad Elliott
-  Coty Beasley
-
 */
 
 var app = {
   access_token: '216655558463278|_B-T_jH1PtyhjVh9j5zr-buUdBc',
-  base_url: 'http://localhost/KartmaMain/'
+  base_url: 'http://kartma.org/'
 };
 
 var monthAbbr = ['Jan','Feb','March','April','May','June','July','Aug','Sept','Oct','Nov','Dec'];
@@ -42,37 +39,39 @@ $.ajax({
 
 $(buildDonations);
 
-var donation_url = app.base_url + 'img/charityframes/';
+var charityFrame_url = app.base_url + 'img/charityframes/';
+var charityLogo_url = app.base_url + 'img/charitylogos/';
+var captionIntro = 'Total Donated to ';
 app.donations = [
 {
-  amount: '$1000000',
-  image: donation_url + 'ChildrensMercy_frame.jpg',
-  caption: 'test',
-  charity_logo: 'http://placekitten.com/g/50/50'
+  amount: '$7,000',
+  image: charityFrame_url + 'ChildrensMercy_frame.jpg',
+  caption: captionIntro + 'Children\'s Mercy',
+  charity_logo: charityLogo_url + 'ChildrensMercy_logo.png'
 },
 {
-  amount: '$30',
-  image: donation_url + 'CrestedButte_frame.jpg',
-  caption: 'test',
-  charity_logo: 'http://placekitten.com/g/50/50'
+  amount: '$15,000',
+  image: charityFrame_url + 'CrestedButte_frame.jpg',
+  caption: captionIntro + 'Center for the Arts Crested Butte',
+  charity_logo: charityLogo_url + 'CrestedButte_logo.png'
 },
 {
-  amount: '$100',
-  image: donation_url + 'KCChamberofCommerce_frame.jpg',
-  caption: 'test',
-  charity_logo: 'http://placekitten.com/g/50/50'
+  amount: '$7,500',
+  image: charityFrame_url + 'YMCA_MLB_frame.jpg',
+  caption: captionIntro + 'YMCA',
+  charity_logo: charityLogo_url + 'YMCA_logo.png'
 },
 {
-  amount: '$100',
-  image: donation_url + 'LafratunaOrphanage_CostaRica_frame.jpg',
-  caption: 'test',
-  charity_logo: 'http://placekitten.com/g/50/50'
+  amount: 'N/A',
+  image: charityFrame_url + 'KCChamberofCommerce_frame.jpg',
+  caption: 'Painting Donated to the KC Chamber of Commerce',
+  charity_logo: charityLogo_url + 'KCChamberofCommerce_logo.png'
 },
 {
-  amount: '$100',
-  image: donation_url + 'YMCA_MLB_frame.jpg',
-  caption: 'test',
-  charity_logo: 'http://placekitten.com/g/50/50'
+  amount: 'N/A',
+  image: charityFrame_url + 'LafratunaOrphanage_CostaRica_frame.jpg',
+  caption: 'Mural for La Fortuna Orphanage, Costa Rica',
+  charity_logo: charityLogo_url + 'LafratunaOrphanage_CostaRica_logo.png'
 }
 ];
 
@@ -85,7 +84,7 @@ function normalizeEvent(event){
 function buildDonations(){
   var sections   = []
     , donations  = app.donations
-    , $donations = $('#donate article')
+    , $donations = $('#donate #charities')
   ;//var
 
   while(donations.length > 0)
