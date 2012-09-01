@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Kartma | Live Event Painting and Prints</title>
-  <meta name="description" content="Kartma features live painter John Bukaty, donating his original works and selling prints.">
+  <meta name="description" content="Kartma features painter John Bukaty, capturing live events and donating creations to charity.">
   <meta name="author" content="Coty Beasley & Beasley Creative">
 
   <meta name="viewport" content="width=device-width">
@@ -27,8 +27,7 @@
       <a href="#seenAt">Gallery</a>
       <a href="#donate">Charities</a>
       <a href="#events">Events</a>
-      <a href="#contact">Book</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact">Book/Contact</a>
       <a id="buyPrints" href="http://kartma.bigcartel.com">Buy Prints</a>
     </div><!-- end #mainNav -->
     </hgroup>
@@ -150,6 +149,7 @@
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
   <script src="js/supersized.js"></script>
+  <script src="js/smoothscroll.js"></script>
   <!-- load Galleria -->
   <script src="js/galleria/galleria-1.2.8.min.js"></script>
   <!-- load picasa plugin -->
@@ -160,6 +160,11 @@
       
       $.supersized({
         slides  :   [ {image : 'img/banner.jpg'} ]
+      });
+
+      $('nav a').smoothScroll({
+        excludeWithin: [''],
+        offset: -80
       });
 
     });
