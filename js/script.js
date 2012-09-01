@@ -1,5 +1,8 @@
 /* Author:
 
+  Chad Elliott
+  Coty Beasley
+
 */
 
 var app = {
