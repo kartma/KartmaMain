@@ -3,7 +3,8 @@
 */
 
 var app = {
-  access_token: 'AAACEdEose0cBAMkCbGMDjeeJPDKZAT2q1p78uevUjMiYdwZBAHm4qemSXyT6JK3AjgWhSfTDJCfcZCXBxyrFe074jJ9IlnaZCUYHi4LkpgZDZD'
+  access_token: '216655558463278|_B-T_jH1PtyhjVh9j5zr-buUdBc',
+  base_url: 'http://localhost/KartmaMain/'
 };
 
 var monthAbbr = ['Jan','Feb','March','April','May','June','July','Aug','Sept','Oct','Nov','Dec'];
@@ -13,28 +14,62 @@ $.ajax({
   url: 'https://graph.facebook.com/126902114116673/events',
   success: function(res){
     app.events = res.data || [];
-    app.events.forEach(normalizeEvent);
-    $(buildEvents);
+
+    var $events  = $('#events')
+      , $loading = $events.find('.ui-loading')
+      , $table   = $events.find('table')
+
+      , events = app.events
+      , i      = events.length
+    ;//var
+
+    while(i--)
+      normalizeEvent(events[i]);
+
+    $(function(){
+      buildEvents(events);
+    });
+
+    $loading.animate({opacity:0}, function(){
+      $loading.hide();
+      $table.css({opacity:0}).show().animate({opacity:1});
+    });
   }
 });
 
 $(buildDonations);
 
+var donation_url = app.base_url + 'img/charityframes/';
 app.donations = [
 {
-  amount: '$1000',
-  image: 'http://images4.fanpop.com/image/photos/23500000/horse-horses-23582505-1024-768.jpg',
-  url: 'http://google.com'
+  amount: '$1000000',
+  image: donation_url + 'ChildrensMercy_frame.jpg',
+  caption: 'test',
+  charity_logo: 'http://placekitten.com/g/50/50'
 },
 {
   amount: '$30',
-  image: 'http://images4.fanpop.com/image/photos/23500000/horse-horses-23582505-1024-768.jpg',
-  url: 'http://google.com'
+  image: donation_url + 'CrestedButte_frame.jpg',
+  caption: 'test',
+  charity_logo: 'http://placekitten.com/g/50/50'
 },
 {
   amount: '$100',
-  image: 'http://images4.fanpop.com/image/photos/23500000/horse-horses-23582505-1024-768.jpg',
-  url: 'http://google.com'
+  image: donation_url + 'KCChamberofCommerce_frame.jpg',
+  caption: 'test',
+  charity_logo: 'http://placekitten.com/g/50/50'
+},
+{
+  amount: '$100',
+  image: donation_url + 'LafratunaOrphanage_CostaRica_frame.jpg',
+  caption: 'test',
+  charity_logo: 'http://placekitten.com/g/50/50'
+},
+{
+  amount: '$100',
+  image: donation_url + 'YMCA_MLB_frame.jpg',
+  caption: 'test',
+  charity_logo: 'http://placekitten.com/g/50/50'
 }
 ];
 
@@ -45,11 +80,22 @@ function normalizeEvent(event){
 }
 
 function buildDonations(){
-  $('#donate ul').append(buildList(app.donations, singleDonation));
+  var sections   = []
+    , donations  = app.donations
+    , $donations = $('#donate article')
+  ;//var
+
+  while(donations.length > 0)
+    sections.push( donations.splice(0,3) );
+
+  for(var i = 0, ilen = sections.length; i < ilen; i++){
+    var $ul = $('<ul/>').append(buildList(sections[i], singleDonation));
+    $donations.append($ul);
+  }
 }
 
-function buildEvents(){
-  $('#events tbody').append(buildList(app.events, singleEvent));
+function buildEvents(list){
+  $('#events tbody').append(buildList(list, singleEvent));
 }
 
 function buildList(collection, view){
@@ -77,8 +123,16 @@ function singleDonation(item){
   var html = [];
 
   html.push('<li class="orange">');
-  html.push('<img src="' + item.image + '"/>');
-  html.push('<div>' + item.amount + '</div>');
+  html.push('<img class="charity_image" src="' + item.image + '"/>');
+
+  if(item.amount && item.charity_logo){
+    html.push('<div class="details">');
+      html.push('<div class="amount">' + item.amount + '</div>');
+      html.push('<img class="charity_logo" src="' + item.charity_logo + '"/>');
+    html.push('</div>');
+  }
+
+  html.push('<div class="caption">' + item.caption + '</div>');
 
   return html.join('');
 };

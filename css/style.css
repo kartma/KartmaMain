@@ -167,10 +167,12 @@ img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
 /* Events */
 #events{
  background:url(../img/canvasTexture.jpg);
+ padding-bottom: 4em;
 }
 #events .ui-upcoming-events{
-  margin: 55px auto 30px;
+  margin: 7% auto 4%;
   display: block;
+  height: auto;
 }
 #events table{
   margin: auto;
@@ -178,6 +180,11 @@ img#JohnBukaty {margin-top: -3.2em; z-index:900; width:60%; margin-right:10%;}
   border-spacing: 0 8px;
   width: 100%;
   max-width: 918px;
+  display: none;
+}
+#events .ui-loading{
+  display: block;
+  margin: auto;
 }
 #events a{
   color: #D0D0CE;
@@ -433,21 +440,58 @@ img{ border:none; }
   list-style: none;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  margin: 20px;
+}
+#doncate ul:first-child{
+  margin-top: 0;
 }
 #donate li{
   width: 32%;
   margin-left: 1%;
   float: left;
   border: 1px solid #ccc;
-  font-family: 'BebasNeueRegular', sans-serif;
-  font-size: 2em;
+  background: #eee;
 }
 #donate li:first-child{
   margin-left: 0;
 }
-#donate img{
+#donate .details{
+  font-family: 'BebasNeueRegular', sans-serif;
+  font-size: 2em;
+  padding: 3%;
+  overflow: hidden;
+}
+#donate .caption{
+  background: #D46A05;
+  color: #fff;
+  text-align: center;
+  clear: both;
+}
+#donate .amount{
+  padding: 20px 0 0 0px;
+  line-height: .5em;
+  float: left;
+}
+#donate .charity_image{
   width: 100%;
   height: auto;
 }
+#donate .charity_logo{
+  float: right;
+  height: 50px;
+  width: auto;
+}
 
+@media (max-width: 680px){
+  #donate ul{
+    margin: 0;
+  }
+  #donate li{
+    width: 100%;
+    margin-left: 0;
+    float: none;
+    margin: 10px 0;
+  }
+}
 

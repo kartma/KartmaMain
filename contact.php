@@ -100,7 +100,7 @@ Enter the email address below to send the contents of the form to.  You can ente
 */
 
 // $my_email = "info@kartma.org";
-$my_email = "chad.d.elliott@gmail.com";
+$my_email = "info@kartma.org";
 
 /*
 
