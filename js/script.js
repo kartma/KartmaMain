@@ -1,5 +1,11 @@
 /* Author:
 
+Coty Beasley
+Chad Elliott
+
+Beasley Creative
+http://beasleycreative.com
+
 */
 
 var app = {
