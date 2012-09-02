@@ -99,7 +99,6 @@ Enter the email address below to send the contents of the form to.  You can ente
 
 */
 
-// $my_email = "info@kartma.org";
 $my_email = "info@kartma.org";
 
 /*
@@ -108,7 +107,7 @@ Optional.  Enter a From: email address.  Only do this if you know you need to.  
 
 */
 
-$from_email = "info@kartma.org";
+$from_email = $_REQUEST["Email"]; //"info@kartma.org";
 
 /*
 
@@ -192,7 +191,7 @@ $message = $message . PHP_EOL.PHP_EOL."-- ".PHP_EOL."You've Received a new messa
 
 $message = stripslashes($message);
 
-$subject = "You've Received a New Message!";
+$subject = "Kartma.org Contact Inquiry";
 
 $subject = stripslashes($subject);
 
