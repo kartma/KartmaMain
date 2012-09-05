@@ -82,9 +82,10 @@ app.donations = [
 ];
 
 function normalizeEvent(event){
-  var time = new Date(event.start_time);
+  // var time = new Date(event.start_time);
   event.url = 'http://facebook.com/' + event.id;
-  event.date = monthAbbr[time.getMonth()] + ' ' + time.getDay() + ', ' + time.getFullYear();
+  event.date = event.start_time;
+  // event.date = monthAbbr[time.getMonth()] + ' ' + time.getDay() + ', ' + time.getFullYear();
 }
 
 function buildDonations(){
